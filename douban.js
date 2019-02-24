@@ -2,19 +2,20 @@ getData()
 var Index = 0;
 
 function getData(){
+
   $.ajax({
     url:'https://api.douban.com/v2/movie/top250',
     type:'GET',
     data:{
     start:Index,
     count:20
-    },/*在豆瓣api中可查*/
+    },
     dataType:'jsonp'
   }).done(function(ret){
     console.log(ret);
     render(ret);
     Index += 20;
-    $('.iconfont').hide();
+    $('div.loading').attr('display','none');
   }).fail(function(){
     console.log('error...');
   });
@@ -46,22 +47,28 @@ function getData(){
   }
 }
 
-$('footer > div').eq(0).on('click',function(){
+//$('footer > div').eq(0).on('click',function(){
+//  $(this).addClass('active').siblings().removeClass('active');
+//  $('section#top').addClass('active').siblings().removeClass('active');
+//  getData();
+//  $('#top').on('scroll',function(){
+//    if($('.item').eq(Index-1).offset().top + $('.item').height()  <=  $(window).scrollTop() + $(window).height()){
+//      getData();
+//    }
+//  })
+//})
+
+$('footer>div').on('click',function(){
   $(this).addClass('active').siblings().removeClass('active');
-  var index=$(this).index();
-  $('section').siblings().hide().eq(index).fadeIn();
-
-  getData();
-
-  $('#top').on('scroll',function(){
-    if($('.item').eq(Index-1).offset().top + $('.item').height()  <=  $(window).scrollTop() + $(window).height()){
-      getData();
-    }
-  })
+  var Index=$(this).index();
+  $('section').eq(Index).addClass('active').siblings().removeClass('active');
 })
 
-
-
+//$('#top').on('scroll',function(){
+//  if($('section').height+50===$(window).scrollTop()+$(window).height()){
+//    getData();
+//  }
+//})
 
 
 
