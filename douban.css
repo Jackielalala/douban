@@ -19,14 +19,16 @@ footer {
   bottom:0;
   height:50px;
   width:100vw;
+  background-color:#ccc;
   border-top:1px solid #ccc;
   display:flex;
   justify-content:space-between;
+  align-items:center;
 }
 footer div {
   flex:1;
   text-align:center;
-  padding:8px;
+  /*padding:auto;*/
 }
 footer div span {
   display:block;
@@ -59,6 +61,7 @@ div.descript {
   overflow: hidden;
 }
 .loading {
+  margin-top:20px;
   text-align:center;
 }
 .iconfont {
