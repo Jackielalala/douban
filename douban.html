@@ -1,25 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="description" content="又挂了" />
+  <meta name="referrer" content="never">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>豆瓣电影</title>
-  <link rel="stylesheet" href="https://at.alicdn.com/t/font_967669_hbws9v4ru6w.css"> 
+
+
   <link rel="stylesheet" href="./douban.css">
 </head>
 <body>
   <main>
-    <section class='top'></section>
-    <section class='us'></section>
-    <section class='search'></section>
+    <div class='loading'>
+          <svg class="iconfont" aria-hidden="true">
+            <use xlink:href="#icon-loading"></use>
+          </svg>
+    </div>
+    <section id='top'>
+    </section>
+    <section id='us'></section>
+    <section id='search'></section>
+    <div class="pad"></div>
   </main>
   <footer>
-    <div class='active'><span class='iconfont icon-top'></span><span>Top250</span></div>
-    <div><span class='iconfont icon-us'></span><span>北美</span></div>
-    <div><span class='iconfont icon-search'></span><span>搜索</span></div>
+
+    <div class='active'>
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-top"></use>
+      </svg>
+      <span>Top250</span></div>
+    <div>
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-us"></use>
+      </svg>
+      <span>北美</span>
+    </div>
+    <div>
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-search"></use>
+      </svg>
+      <span>搜索</span>
+    </div>
   </footer>
-  <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src='./douban.js'></script>
+
+   <script src='https://at.alicdn.com/t/font_967669_mrvusxx8i5.js'></script>
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src='./douban-abandon.js'></script>
 </body>
 </html>

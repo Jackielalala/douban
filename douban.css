@@ -3,23 +3,20 @@
   margin:0;
   box-sizing:border-box;
 }
+
 a {
   text-decoration:none;
 }
-html,
-body {
+html, body, main {
   height:100%;
-
 }
-
-main {
-  height:calc(100vh - 50px);/*注意中间的空格*/
+main .pad {
+  height:50px;
 }
 
 footer {
   position:fixed;
   bottom:0;
-  background-color:#ccc;
   height:50px;
   width:100vw;
   border-top:1px solid #ccc;
@@ -55,7 +52,19 @@ div.descript {
   flex:1;
   padding:20px 10px;
 }
-
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+.loading {
+  text-align:center;
+}
+.iconfont {
+ width:2em;
+ height:2em;
+}
 
 
 
