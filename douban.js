@@ -1,23 +1,29 @@
-getData()
-var Index = 0;
+getData();
+var index = 0;
+var isLoading=false;
 
 function getData(){
-
+  $('.loading').show();
+  if(isLoading){return;}/*函数节流 */
+  isLoading=true;/*函数节流*/
   $.ajax({
     url:'https://api.douban.com/v2/movie/top250',
     type:'GET',
     data:{
-    start:Index,
+    start:index,
     count:20
     },
     dataType:'jsonp'
   }).done(function(ret){
     console.log(ret);
     render(ret);
-    Index += 20;
-    $('div.loading').attr('display','none');
+    index += 20;
+    $('div.loading').hide();
+    isLoading=false;/*函数节流*/
   }).fail(function(){
     console.log('error...');
+  }).always(function(){
+    $('.loading').hide();
   });
 
   function render(data){
@@ -42,11 +48,22 @@ function getData(){
         })
         return (movie.year+'/'+typeArr.join('、'))
       })
-      $('section#top').append($node); 
+      $('.top250').append($node); 
     });
   }
 }
 
+$('footer>div').on('click',function(){
+  $(this).addClass('active').siblings().removeClass('active');
+  var Index=$(this).index();
+  $('section').eq(Index).addClass('active').siblings().removeClass('active');
+})
+
+$(window).on('scroll',function(){
+  if($('section#top').height()+30 <= $(window).height()+$(window).scrollTop()){
+    getData();
+  }
+})
 //$('footer > div').eq(0).on('click',function(){
 //  $(this).addClass('active').siblings().removeClass('active');
 //  $('section#top').addClass('active').siblings().removeClass('active');
@@ -58,17 +75,7 @@ function getData(){
 //  })
 //})
 
-$('footer>div').on('click',function(){
-  $(this).addClass('active').siblings().removeClass('active');
-  var Index=$(this).index();
-  $('section').eq(Index).addClass('active').siblings().removeClass('active');
-})
 
-//$('#top').on('scroll',function(){
-//  if($('section').height+50===$(window).scrollTop()+$(window).height()){
-//    getData();
-//  }
-//})
 
 
 

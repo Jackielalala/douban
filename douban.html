@@ -6,24 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>豆瓣电影</title>
 
-
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_967669_4pqx5rsikbl.css">
   <link rel="stylesheet" href="./douban.css">
 </head>
 <body>
   <main>
-    <div class='loading'>
-          <svg class="iconfont" aria-hidden="true">
-            <use xlink:href="#icon-loading"></use>
-          </svg>
-    </div>
-    <div class="wrap">
-        <section id='top' class='active'></section>
-        <section id='us'>2</section>
-        <section id='search'>
-        <input type="text" placeholder="搜索电影">
-        <span type='button'>搜索</span>
-        </section>
-    </div>
+
+    <section id='top' class='active'>
+      <div class="top250"></div>
+      <div class='loading'>
+        <svg class="iconfont" aria-hidden="true">
+          <use xlink:href="#icon-loading"></use>
+        </svg>
+      </div>
+    </section>
+    <section id='us'>2</section>
+    <section id='search'>
+      <input type="text" placeholder="搜索电影">
+      <span type='button'>搜索</span>
+    </section>
+
     <div class="pad"></div>
   </main>
   <footer>
@@ -50,6 +52,6 @@
 
    <script src='https://at.alicdn.com/t/font_967669_mrvusxx8i5.js'></script>
   <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-  <script src='./douban-abandon.js'></script>
+  <script src='./douban.js'></script>
 </body>
 </html>

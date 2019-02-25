@@ -63,6 +63,17 @@ div.descript {
 }
 .loading {
   text-align:center;
+  animation:circle 0.5s linear infinite;
+  display:none;
+}
+
+@keyframes circle {
+  0% {
+    transform:rotate(0);
+  }
+  100% {
+    transform:rotate(360deg);
+  }
 }
 .iconfont {
  width:2em;
@@ -73,9 +84,7 @@ section {
 section.active {
   display:block;
 }
-.search {
-  display:flex;
-}
+
 input {
   border:1px solid #ccc;
   height:30px;
@@ -87,7 +96,11 @@ input {
 h2 {
   padding-bottom:5px;
 }
-
+#search span {
+  display:inline-block;
+  padding:3px;
+  background:rgb(250, 68, 68);
+}
 
 
 
