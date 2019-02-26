@@ -125,12 +125,12 @@ function renderUs(data){
 
 
 var INDEX=0;
-var whetherload=false;
+var Isloading=false;
 function getDataSearch(){
-  if(whetherload){return;}
-  whetherload=true;
   var keyword=$('input').val();
   $('.loading').show();
+  if(Isloading){return;}/*函数节流 */
+  Isloading=true;/*函数节流*/
   $.ajax({
     url:'https://api.douban.com/v2/movie/search',
     type:'GET',
@@ -144,7 +144,7 @@ function getDataSearch(){
     console.log(ret);
     renderSearch(ret);
     INDEX += 20;
-    whetherload=false;
+    Isloading=false;
   }).fail(function(){
     console.log('error...');
   }).always(function(){
@@ -195,10 +195,9 @@ $(window).on('scroll',function(){
     if(clock){clearTimeout(clock);}
     var clock=setTimeout(function(){
       getDataSearch();
-    },5000)
+    },3000)
   }
 })
-
 
 
 
