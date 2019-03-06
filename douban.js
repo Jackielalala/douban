@@ -35,7 +35,7 @@ function getDataTop(){
 
 function renderTop(data){
   data.subjects.forEach(function(movie){
-    var html= '<div class="item"><div class="imagebox"><img src="#" alt=""></div><div class="descript"><h2></h2><p class="type">1994/犯罪、剧情</p><p class="director">导演：弗兰克·德拉邦特</p><p class="actor">主演：蒂姆·罗宾斯、摩根·弗里曼、鲍勃·冈顿</p></div></div>';
+    var html= '<div class="item"><div class="imagebox"><img src="#" alt=""></div><div class="descript"><div class="wra"><h2></h2><p class="type">1994/犯罪、剧情</p><p class="director">导演：弗兰克·德拉邦特</p><p class="actor">主演：蒂姆·罗宾斯、摩根·弗里曼、鲍勃·冈顿</p></div></div></div>';
     var $node=$(html);
     $node.find('img').attr('src',movie.images.small);
     $node.find('.descript h2').text(movie.title);
@@ -93,7 +93,7 @@ $(window).on('scroll',function(){
 
 function renderUs(data){
   data.subjects.forEach(function(movie){
-    var html= '<div class="item"><div class="imagebox"><img src="#" alt=""></div><div class="descript"><h2></h2><p class="type">1994/犯罪、剧情</p><p class="director">导演：弗兰克·德拉邦特</p><p class="actor">主演：蒂姆·罗宾斯、摩根·弗里曼、鲍勃·冈顿</p></div></div>';
+    var html= '<div class="item"><div class="imagebox"><img src="#" alt=""></div><div class="descript"><div class="wrap"><h2></h2><p class="type">1994/犯罪、剧情</p><p class="director">导演：弗兰克·德拉邦特</p><p class="actor">主演：蒂姆·罗宾斯、摩根·弗里曼、鲍勃·冈顿</p></div></div></div>';
     var $node=$(html);
     $node.find('img').attr('src',movie.subject.images.small);
     $node.find('.descript h2').text(movie.subject.title);
@@ -154,7 +154,7 @@ function getDataSearch(){
 
  function renderSearch(data){
   data.subjects.forEach(function(movie){
-    var html= '<div class="item"><div class="imagebox"><img src="#" alt=""></div><div class="descript"><h2></h2><p class="type">1994/犯罪、剧情</p><p class="director">导演：弗兰克·德拉邦特</p><p class="actor">主演：蒂姆·罗宾斯、摩根·弗里曼、鲍勃·冈顿</p></div></div>';
+    var html= '<div class="item"><div class="imagebox"><img src="#" alt=""></div><div class="descript"><div class="wrap"><h2></h2><p class="type">1994/犯罪、剧情</p><p class="director">导演：弗兰克·德拉邦特</p><p class="actor">主演：蒂姆·罗宾斯、摩根·弗里曼、鲍勃·冈顿</p></div></div></div>';
     var $node=$(html);
     $node.find('img').attr('src',movie.images.small);
     $node.find('.descript h2').text(movie.title);
